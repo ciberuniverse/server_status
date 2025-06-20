@@ -201,7 +201,9 @@ def solve_() -> str:
         # Si es que se esta usando como archivo externo
         if TERMINAL:
             with open(RESP_SOLVE, "r") as read_:
-                hash = md5(read_.read().strip().encode("UTF-8")).hexdigest()
+                # hash = md5(read_.read().strip().encode("UTF-8")).hexdigest()
+                # Se quito el .strip() que por algun motivo puse.
+                hash = md5(read_.read().encode("UTF-8")).hexdigest()
 
         # Si es que se esta importando como libreria
         else:
