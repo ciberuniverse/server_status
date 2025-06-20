@@ -199,11 +199,10 @@ def solve_() -> str:
     try:
 
         # Si es que se esta usando como archivo externo
+        # PARA TODOS LOS EXAMENES TECNICOS QUE NO SEAN PYTHON, ESTAN USANDOSE RB PARA EVITAR BUGS DE COMPATIBILIDAD
         if TERMINAL:
-            with open(RESP_SOLVE, "r") as read_:
-                # hash = md5(read_.read().strip().encode("UTF-8")).hexdigest()
-                # Se quito el .strip() que por algun motivo puse.
-                hash = md5(read_.read().encode("UTF-8")).hexdigest()
+            with open(RESP_SOLVE, "rb") as read_:
+                hash = md5(read_.read()).hexdigest()
 
         # Si es que se esta importando como libreria
         else:
